@@ -1,15 +1,22 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function TabTwoScreen() {
+  const [userEmail, setUserEmail] = useState<string>();
+
+  useEffect(() => {
+    AsyncStorage.getItem('email').then((name) => {
+      setUserEmail(name);
+    });
+  }, [userEmail]);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
+      <Text style={styles.title}>{userEmail?.trim()}</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
     </View>
   );
 }
@@ -23,6 +30,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    fontFamily: 'work-sans-bold',
   },
   separator: {
     marginVertical: 30,
