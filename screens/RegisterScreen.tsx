@@ -56,12 +56,12 @@ const RegisterScreen: FC<RegisterScreenProps> = (props) => {
       <SafeAreaView style={styles.container}>
         <Image source={require('../assets/images/logo.png')} style={styles.logo} />
         <KeyboardAwareScrollView>
-          <Text style={styles.title}>Register</Text>
-          <TextInput onChangeText={form.handleChange('fullName')} placeholder="Full Name" style={styles.input} textContentType="name" />
-          <TextInput onChangeText={form.handleChange('email')} placeholder="Email" style={styles.input} textContentType="emailAddress" />
-          <TextInput placeholder="Password" onChangeText={form.handleChange('password')} secureTextEntry={true} style={styles.input} />
+          <Text style={styles.title}>register</Text>
+          <TextInput onChangeText={form.handleChange('fullName')} placeholder="full name" style={styles.input} textContentType="name" />
+          <TextInput onChangeText={form.handleChange('email')} placeholder="email" style={styles.input} textContentType="emailAddress" />
+          <TextInput placeholder="password" onChangeText={form.handleChange('password')} secureTextEntry={true} style={styles.input} />
           <Pressable onPress={form.handleSubmit} style={styles.button}>
-            <Text style={styles.buttonText}>Submit</Text>
+            <Text style={styles.buttonText}>submit</Text>
           </Pressable>
         </KeyboardAwareScrollView>
       </SafeAreaView>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 10,
     elevation: 3,
-    backgroundColor: '#71a0ae',
+    backgroundColor: '#97c266',
   },
   buttonText: {
     fontSize: 16,

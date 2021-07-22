@@ -23,6 +23,8 @@ const OnboardingScreen: FC<OnboardingScreenProps> = (props) => {
       <Onboarding
         titleStyles={styles.title}
         subTitleStyles={styles.subtitle}
+        nextLabel={'next'}
+        skipLabel={'skip'}
         onSkip={() => {
           props.navigation.replace('Register');
         }}
@@ -31,22 +33,28 @@ const OnboardingScreen: FC<OnboardingScreenProps> = (props) => {
         }}
         pages={[
           {
-            backgroundColor: '#334257',
-            title: 'LighterLiving',
-            subtitle: 'Welcome to the LighterLiving app!',
+            backgroundColor: '#97c266',
+            title: 'lighterliving',
+            subtitle: 'welcome to the lighterliving app!',
             image: <Image source={require('../assets/images/logo-white.png')} style={styles.image} />,
           },
           {
-            backgroundColor: '#476072',
-            title: 'Personal Reformer',
-            subtitle: 'Your personal trainer with you every day!',
+            backgroundColor: '#97c266',
+            title: 'personal reformer',
+            subtitle: 'your personal trainer with you every day!',
             image: <Image source={require('../assets/images/pilates.png')} style={styles.image} />,
           },
           {
-            backgroundColor: '#548CA8',
-            title: 'Save Progress',
-            subtitle: 'Train everyday and make progress!',
-            image: <Image source={require('../assets/images/growth.png')} style={styles.image} />,
+            backgroundColor: '#97c266',
+            title: 'save progress',
+            subtitle: 'train everyday and make progress!',
+            image: <Image source={require('../assets/images/progress-2.png')} style={styles.image} />,
+          },
+          {
+            backgroundColor: '#97c266',
+            title: 'personalized trainings',
+            subtitle: 'we create personalized workouts for you!',
+            image: <Image source={require('../assets/images/customer.png')} style={styles.image} />,
           },
         ]}
       />
